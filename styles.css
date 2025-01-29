@@ -3,6 +3,9 @@ body {
     background-color: #f8f9fa;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
 /* Sidebar */
@@ -58,11 +61,11 @@ nav ul li a.active:hover {
     color: #7d04ff;
 }
 
-/* Main Content */
 .main-content {
     margin-left: 25%;
     padding: 80px;
     text-align: center;
+    flex: 1; 
 }
 
 .intro h1 {
@@ -85,13 +88,90 @@ nav ul li a.active:hover {
     margin-top: 10px;
 }
 
+
+
 footer{
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    right: 0;
     
 }
 
-.footer{
-    position: absolute;
-    bottom: 0;
-    right: 30;
+/* For Responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        text-align: center;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 40px;
+    }
+
+    /*Tablets */
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+        color: #007bff;
+    }
+
+    nav ul li a.active:hover {
+        color: #7d04ff;
+    }
+
+    footer {
+        background-color: #f4f6f9;
+        text-align: right;
+        padding: 10px 30px;
+        font-size: 14px;
+        width: 100%;
+        margin-top: auto; 
+    }
+
+    
+}
+
+/* (mobile phones) */
+@media (max-width: 576px) {
+    .intro h1 {
+        font-size: 36px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    footer {
+        background-color: #f4f6f9;
+        text-align: right;
+        padding: 10px 30px;
+        font-size: 14px;
+        width: 100%;
+        margin-top: auto; 
+    }
 }
